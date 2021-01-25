@@ -31,9 +31,9 @@ class StatsTest(unittest.TestCase):
   def test_avg_is_nan_for_empty_input(self):
     computedStats = statistics.calculateStats([])
     epsilon = 0.001
-    self.assertAlmostEqual(computedStats["avg"], float('nan'), delta=epsilon)
-    self.assertAlmostEqual(computedStats["max"], float('nan'), delta=epsilon)
-    self.assertAlmostEqual(computedStats["min"], float('nan'), delta=epsilon)    
+    self.assertAlmostEqual(computedStats["avg"], 'nan', delta=epsilon)
+    self.assertAlmostEqual(computedStats["max"], 'nan', delta=epsilon)
+    self.assertAlmostEqual(computedStats["min"], 'nan', delta=epsilon)    
     # All fields of computedStats (average, max, min) must be
     # nan (not-a-number), as defined in the math package
     # Design the assert here.

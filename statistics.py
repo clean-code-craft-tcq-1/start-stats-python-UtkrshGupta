@@ -1,9 +1,9 @@
 def calculateStats(numbers):
     compStats = {'avg': 0 , 'min': 0,'max': 0 }
     if not numbers:
-        compStats['avg'] = float('nan')
-        compStats['min'] = float('nan')
-        compStats['max'] = float('nan')
+        compStats['avg'] = 'nan'
+        compStats['min'] = 'nan'
+        compStats['max'] = 'nan'
     else:
         for num in numbers:
             compStats['avg'] += num
