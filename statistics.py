@@ -1,23 +1,17 @@
-import statistics 
-import numpy as np
-
 def calculateStats(numbers):
     compStats = {'avg': 0 , 'min': 0,'max': 0 }
     if not numbers:
         for key in compStats.keys:
             if key == 'avg':
-                compStats[key] = np.nan
+                compStats[key] = float('nan')
             elif key == 'min':
-                compStats[key] = np.nan
+                compStats[key] = float('nan')
             elif key == 'max':
-                compStats[key] = np.nan       
+                compStats[key] = float('nan')
     else:
-        for key in compStats.keys:
-            if key == 'avg':
-                compStats[key] = statistics.mean(numbers)
-            elif key == 'min':
-                compStats[key] = np.min(numbers)
-            elif key == 'max':
-                compStats[key] = np.max(numbers)                
-    
+        for num in numbers:
+            compStats['avg'] += num
+            compStats['min'] = min(numbers)
+            compStats['max'] = max(numbers)                
+        compStats['avg'] /= len(numbers)
     return compStats
